@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do List</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Playwrite+ID:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@100..900&family=Varela+Round&display=swap');
+      * {
+        margin: 0;
+        padding: 0;
+        
+      }
+      body {
+        background-color: rgb(40, 40, 53);
+      }
+      header {
+        position: sticky;
+        top: 0;
+        /* z-index:1000; */
+      }
+      nav {
+        display: flex;
+        justify-content: space-around;
+        height: 60px;
+
+        background-color: rgb(3, 3, 28);
+        color: white;
+      }
+      .left-navbar {
+        display: flex;
+        align-items: center;
+
+        font-style: italic;
+        font-family: "Playwrite ID", cursive;
+      }
+      .right-navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: "Lora", serif;
+      }
+      .right-navbar ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .right-navbar ul li {
+        list-style: none;
+        margin: 0 20px;
+      }
+      .right-navbar ul li a {
+        color: white;
+        text-decoration: none;
+      }
+      .right-navbar ul li a:hover {
+        color: aquamarine;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+      main {
+        background-color: rgb(40, 40, 53);
+        min-height: 90vh;
+        color: white;
+        font-family: "Lora", serif;
+      }
+      textarea {
+        height: 70px;
+        width: 500px;
+      }
+      .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding-top: 40px;
+      }
+      .content h2 {
+        padding: 30px;
+        font-size: 3rem;
+      }
+      .content button {
+        margin: 20px;
+        height: 30px;
+        width: 50px;
+        color: white;
+        background-color: rgb(60, 67, 67);
+        border: none;
+        border: 2px solid rgb(3, 3, 28);
+      }
+      .content button:hover {
+        color: rgb(60, 67, 67);
+        background-color: white;
+      }
+      .box {
+        display: flex;
+      }
+      .content p {
+        color: red;
+      }
+      .tasks {
+        width: 60%;
+        margin: 30px auto;
+      }
+
+      .tasks h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+      }
+
+      .tasks ul {
+        padding: 0;
+      }
+
+      .tasks ul li {
+        list-style: none;
+        background-color: #ffffff;
+        color: black;
+        margin: 12px 0;
+        padding: 15px 20px;
+        border-radius: 10px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+      }
+      footer {
+        background-color: rgb(3, 3, 28);
+        color: white;
+        text-align: center;
+        padding: 20px;
+        margin-top: 40px;
+      }
+
+      footer p {
+        margin: 5px 0;
+        font-family: "Lora", serif;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="left-navbar">
+          <h2>To Do List</h2>
+        </div>
+        <div class="right-navbar">
+          <ul>
+            <li><a href="ToDoList.html">Home</a></li>
+
+            <li><a href="dicsription.html">Description</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="content">
+        <h2>Add Your Tasks</h2>
+        <div class="box">
+          <textarea id="task"></textarea>
+
+          <button onclick="AddItem()">Add</button>
+        </div>
+        <p id="error"></p>
+      </div>
+
+      <div class="tasks">
+        <h2>Your Tasks Are:-</h2>
+        <ul id="list"></ul>
+      </div>
+    </main>
+    <footer>
+      <p>&copy; 2026 To-Do List. All Rights Reserved.</p>
+      <p>Designed & Developed by Sukriti Bansal</p>
+    </footer>
+    <script>
+      let taskList = [];
+
+      function AddItem() {
+        const task = document.getElementById("task").value;
+
+        let error = "";
+        if (task === "") {
+          error = "Enter something in textBox to begin";
+          document.getElementById("error").innerText = error;
+          return;
+        }
+        document.getElementById("error").innerText = "";
+        taskList.push(task);
+        let li = document.createElement("li");
+        li.innerHTML = `${task} 
+                <button onclick="removeTask(this)">X</button>`;
+        document.getElementById("list").appendChild(li);
+
+        document.getElementById("task").value = "";
+      }
+      function removeTask(button) {
+        button.parentElement.remove();
+      }
+    </script>
+  </body>
+</html>
