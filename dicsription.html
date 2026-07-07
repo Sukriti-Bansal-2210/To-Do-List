@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discription</title>
+   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Playwrite+ID:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@100..900&family=Varela+Round&display=swap');
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        background-color:rgb(40, 40, 53) ;
+      }
+      header{
+        position: sticky;
+        top:0;
+        /* z-index:1000; */
+      }
+      nav {
+        display: flex;
+        justify-content: space-around;
+        height: 60px;
+        
+        background-color: rgb(3, 3, 28);
+        color: white;
+      }
+      .left-navbar {
+        display: flex;
+        align-items: center;
+        font-style: italic;
+        font-family: "Playwrite ID", cursive;
+      }
+      .right-navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: "Lora", serif;
+      }
+      .right-navbar ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .right-navbar ul li {
+        list-style: none;
+        margin: 0 20px;
+      }
+      .right-navbar ul li a {
+        color: white;
+        text-decoration: none;
+      }
+      .right-navbar ul li a:hover {
+        color: aquamarine;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+      .container{
+        margin: 20px 180px;
+      }
+      .container p{
+        color:white;
+        font-size:20px;
+      }
+      .features li{
+        color:white;
+        font-size:18px;
+        list-style:none;
+        padding-left:3px;
+        background-color: white;
+        color:rgb(3, 3, 28);
+        margin:8px;
+        border-radius:7px;
+        min-height:30px;
+        display: flex;
+        align-items: center;
+        font-family: "Lora", serif;
+      }
+      .features li:hover{
+        color:white;
+        background-color: rgb(3, 3, 28);
+      }
+      .benefits li{
+        color:white;
+        font-size:18px;
+        list-style:none;
+        padding-left:3px;
+        background-color: white;
+        color:rgb(3, 3, 28);
+        margin:8px;
+        border-radius:7px;
+        min-height:30px;
+        display: flex;
+        align-items: center;
+        font-family: "Lora", serif;
+      }
+      .benefits li:hover{
+        color:white;
+        background-color: rgb(3, 3, 28);
+      }
+      footer {
+        background-color: rgb(3, 3, 28);
+        color: white;
+        text-align: center;
+        padding: 20px;
+        margin-top: 40px;
+      }
+
+      footer p {
+        margin: 5px 0;
+        font-family: "Lora", serif;
+      }
+   </style>
+</head>
+<body>
+    <header>
+      <nav>
+        <div class="left-navbar">
+          <h2>To Do List</h2>
+        </div>
+        <div class="right-navbar">
+          <ul>
+            <li><a href="ToDoList.html">Home</a></li>
+            <li><a href="dicsription.html">Description</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <h2 style="color:white; margin:20px 180px;">Discription</h2>
+      <div class="container">
+        <p>A To-Do List is a simple task management application that helps users organize and keep track of their daily activities. It allows users to create, manage, and remove tasks efficiently, ensuring that important work is not forgotten.</p>
+      </div>
+      <div class="container">
+        <p>This application is designed to improve productivity by providing an easy-to-use interface where users can add new tasks, view pending tasks, and delete completed ones. It serves as a digital reminder, making it easier to prioritize work and manage time effectively.</p>
+      </div>
+      <div class="container">
+        <h2 style="color:white;margin:10px 0">Features</h2>
+        <ul class="features">
+          <li>Add new tasks quickly</li>
+          <li>Delete completed or unwanted tasks</li>
+          <li>Displays an error message when trying to add an empty task</li>
+          <li>Simple and user-friendly interface</li>
+          <li>Built using HTML, CSS, and JavaScript</li>
+          <li>Responsive design for a better user experience</li>
+        </ul>
+
+        <h2 style="color:white;margin:10px 0">Benefits</h2>
+        <ul class="benefits">
+          <li>Helps organize daily activities</li>
+          <li>Increases productivity and efficiency</li>
+          <li>Prevents forgetting important tasks</li>
+          <li>Encourages better time management</li>
+          <li>Easy to use for students, professionals, and anyone managing daily work</li>
+        </ul>
+
+      </div>
+      
+    </main>
+    <footer>
+      <p>&copy; 2026 To-Do List. All Rights Reserved.</p>
+      <p>Designed & Developed by Sukriti Bansal</p>
+    </footer>
+</body>
+</html>
